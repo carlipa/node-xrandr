@@ -39,6 +39,7 @@ export default function xrandrParser(input) {
         height: parseInt(parts[2], 10),
         rate: parseFloat(parts[3], 10)
       };
+      if (/^[0-9]+i$/.test(parts[2])) mode.interlaced = true;
       if (parts[4] === '+' || parts[5] === '+') mode.native = true;
       if (parts[4] === '*' || parts[5] === '*') mode.current = true;
       result[lastInterface].modes.push(mode);

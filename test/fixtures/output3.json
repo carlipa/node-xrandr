@@ -15,7 +15,8 @@
       {
         "height": 1080,
         "rate": 60,
-        "width": 1920
+        "width": 1920,
+        "interlaced": true
       },
       {
         "height": 1050,
@@ -75,6 +76,7 @@
       },
       {
         "height": 576,
+        "interlaced": true,
         "rate": 50,
         "width": 720
       },
