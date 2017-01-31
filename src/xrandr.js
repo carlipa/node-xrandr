@@ -2,7 +2,7 @@ const CONNECTED_REGEX = /^(\S+) connected (?:(\d+)x(\d+))?/;
 const DISCONNECTED_REGEX = /^(\S+) disconnected/;
 const MODE_REGEX = /^\s+(\d+)x([0-9i]+)\s+((?:\d+\.)?\d+)([* ]?)([+ ]?)/;
 
-export default function xrandrParser(input) {
+function xrandrParser(input) {
   let strInput = input;
   if (Buffer.isBuffer(input)) {
     strInput = input.toString();
@@ -49,3 +49,5 @@ export default function xrandrParser(input) {
   });
   return result;
 }
+
+export default xrandrParser;

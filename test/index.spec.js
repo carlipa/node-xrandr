@@ -1,6 +1,6 @@
 import fs from 'fs';
 import expect from 'expect';
-import parser from '../src/index';
+import parser from '../src/xrandr';
 
 describe('parser', () => {
   // Fetch fixtures
