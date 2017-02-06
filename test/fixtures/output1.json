@@ -90,7 +90,8 @@
         "rate": 60,
         "width": 640
       }
-    ]
+    ],
+    "rotation": "normal"
   },
   "HDMI2": {
     "connected": false,
