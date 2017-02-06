@@ -62,4 +62,7 @@ function xrandrParser(input) {
   return result;
 }
 
-export default xrandrParser;
+export {
+  xrandrParser as parser,
+  xrandrParser as default
+};
