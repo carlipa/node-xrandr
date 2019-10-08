@@ -1,6 +1,6 @@
 {
   "name": "xrandr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Xrandr output parser",
   "main": "lib/xrandr.js",
   "repository": "git@github.com:carlipa/node-xrandr.git",
