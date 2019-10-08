@@ -1,0 +1,267 @@
+Screen 0: minimum 8 x 8, current 3840 x 2160, maximum 32767 x 32767
+DP-0 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x21e
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: DisplayPort
+		supported: DisplayPort
+	ConnectorType: DisplayPort
+	ConnectorNumber: 1
+	_ConnectorLocation: 1
+	non-desktop: 0
+		supported: 0, 1
+DP-1 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x21f
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: TMDS
+		supported: TMDS
+	ConnectorType: DisplayPort
+	ConnectorNumber: 1
+	_ConnectorLocation: 1
+	non-desktop: 0
+		supported: 0, 1
+DP-2 connected primary 3840x2160+0+0 (0x221) normal (normal left inverted right x axis y axis) 596mm x 335mm
+	Identifier: 0x220
+	Timestamp:  8877
+	Subpixel:   unknown
+	Gamma:      1.0:1.0:1.0
+	Brightness: 1.0
+	Clones:
+	CRTC:       0
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	_MUTTER_PRESENTATION_OUTPUT: 0
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	EDID:
+		00ffffffffffff0009d11e8045540000
+		031c0104b53c22783f3cd0a7544a9d24
+		0e5054a56b80d1c081c081008180a9c0
+		b300010101014dd000a0f0703e803020
+		3500544f2100001a000000ff005a314a
+		3034383137534c300a20000000fd0030
+		3c85853c010a202020202020000000fc
+		0042656e51204c43440a2020202001d6
+		020322f14f9005040302011112131406
+		0715161f230907078301000065030c00
+		1000023a801871382d40582c4500544f
+		2100001e011d8018711c1620582c2500
+		544f2100009e011d007251d01e206e28
+		5500544f2100001e04740030f2705a80
+		b0588a00544f2100001a565e00a0a0a0
+		295030203500544f2100001a0000007e
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: DisplayPort
+		supported: DisplayPort
+	ConnectorType: DisplayPort
+	ConnectorNumber: 0
+	_ConnectorLocation: 0
+	non-desktop: 0
+		supported: 0, 1
+  3840x2160 (0x221) 533.250MHz +HSync -VSync *current +preferred
+        h: width  3840 start 3888 end 3920 total 4000 skew    0 clock 133.31KHz
+        v: height 2160 start 2163 end 2168 total 2222           clock  60.00Hz
+  3840x2160 (0x222) 297.000MHz +HSync -VSync
+        h: width  3840 start 4016 end 4104 total 4400 skew    0 clock  67.50KHz
+        v: height 2160 start 2168 end 2178 total 2250           clock  30.00Hz
+  2560x1440 (0x223) 241.500MHz +HSync -VSync
+        h: width  2560 start 2608 end 2640 total 2720 skew    0 clock  88.79KHz
+        v: height 1440 start 1443 end 1448 total 1481           clock  59.95Hz
+  1920x1080 (0x224) 148.500MHz +HSync +VSync
+        h: width  1920 start 2008 end 2052 total 2200 skew    0 clock  67.50KHz
+        v: height 1080 start 1084 end 1089 total 1125           clock  60.00Hz
+  1920x1080 (0x225) 148.350MHz +HSync +VSync
+        h: width  1920 start 2008 end 2052 total 2200 skew    0 clock  67.43KHz
+        v: height 1080 start 1084 end 1089 total 1125           clock  59.94Hz
+  1920x1080 (0x226) 148.500MHz +HSync +VSync
+        h: width  1920 start 2448 end 2492 total 2640 skew    0 clock  56.25KHz
+        v: height 1080 start 1084 end 1089 total 1125           clock  50.00Hz
+  1680x1050 (0x227) 146.250MHz -HSync +VSync
+        h: width  1680 start 1784 end 1960 total 2240 skew    0 clock  65.29KHz
+        v: height 1050 start 1053 end 1059 total 1089           clock  59.95Hz
+  1600x900 (0x228) 108.000MHz +HSync +VSync
+        h: width  1600 start 1624 end 1704 total 1800 skew    0 clock  60.00KHz
+        v: height  900 start  901 end  904 total 1000           clock  60.00Hz
+  1280x1024 (0x229) 135.000MHz +HSync +VSync
+        h: width  1280 start 1296 end 1440 total 1688 skew    0 clock  79.98KHz
+        v: height 1024 start 1025 end 1028 total 1066           clock  75.02Hz
+  1280x1024 (0x22a) 108.000MHz +HSync +VSync
+        h: width  1280 start 1328 end 1440 total 1688 skew    0 clock  63.98KHz
+        v: height 1024 start 1025 end 1028 total 1066           clock  60.02Hz
+  1280x800 (0x22b) 83.500MHz -HSync +VSync
+        h: width  1280 start 1352 end 1480 total 1680 skew    0 clock  49.70KHz
+        v: height  800 start  803 end  809 total  831           clock  59.81Hz
+  1280x720 (0x22c) 74.250MHz +HSync +VSync
+        h: width  1280 start 1390 end 1430 total 1650 skew    0 clock  45.00KHz
+        v: height  720 start  725 end  730 total  750           clock  60.00Hz
+  1280x720 (0x22d) 74.180MHz +HSync +VSync
+        h: width  1280 start 1390 end 1430 total 1650 skew    0 clock  44.96KHz
+        v: height  720 start  725 end  730 total  750           clock  59.94Hz
+  1280x720 (0x22e) 74.250MHz +HSync +VSync
+        h: width  1280 start 1720 end 1760 total 1980 skew    0 clock  37.50KHz
+        v: height  720 start  725 end  730 total  750           clock  50.00Hz
+  1024x768 (0x22f) 78.750MHz +HSync +VSync
+        h: width  1024 start 1040 end 1136 total 1312 skew    0 clock  60.02KHz
+        v: height  768 start  769 end  772 total  800           clock  75.03Hz
+  1024x768 (0x230) 65.000MHz -HSync -VSync
+        h: width  1024 start 1048 end 1184 total 1344 skew    0 clock  48.36KHz
+        v: height  768 start  771 end  777 total  806           clock  60.00Hz
+  800x600 (0x231) 49.500MHz +HSync +VSync
+        h: width   800 start  816 end  896 total 1056 skew    0 clock  46.88KHz
+        v: height  600 start  601 end  604 total  625           clock  75.00Hz
+  800x600 (0x232) 40.000MHz +HSync +VSync
+        h: width   800 start  840 end  968 total 1056 skew    0 clock  37.88KHz
+        v: height  600 start  601 end  605 total  628           clock  60.32Hz
+  720x576 (0x233) 27.000MHz -HSync -VSync
+        h: width   720 start  732 end  796 total  864 skew    0 clock  31.25KHz
+        v: height  576 start  581 end  586 total  625           clock  50.00Hz
+  720x480 (0x234) 27.000MHz -HSync -VSync
+        h: width   720 start  736 end  798 total  858 skew    0 clock  31.47KHz
+        v: height  480 start  489 end  495 total  525           clock  59.94Hz
+  640x480 (0x235) 31.500MHz -HSync -VSync
+        h: width   640 start  656 end  720 total  840 skew    0 clock  37.50KHz
+        v: height  480 start  481 end  484 total  500           clock  75.00Hz
+  640x480 (0x236) 25.175MHz -HSync -VSync
+        h: width   640 start  656 end  752 total  800 skew    0 clock  31.47KHz
+        v: height  480 start  490 end  492 total  525           clock  59.94Hz
+  640x480 (0x237) 25.170MHz -HSync -VSync
+        h: width   640 start  656 end  752 total  800 skew    0 clock  31.46KHz
+        v: height  480 start  490 end  492 total  525           clock  59.93Hz
+DP-3 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x238
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: TMDS
+		supported: TMDS
+	ConnectorType: DisplayPort
+	ConnectorNumber: 0
+	_ConnectorLocation: 0
+	non-desktop: 0
+		supported: 0, 1
+DP-4 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x239
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: DisplayPort
+		supported: DisplayPort
+	ConnectorType: DisplayPort
+	ConnectorNumber: 3
+	_ConnectorLocation: 3
+	non-desktop: 0
+		supported: 0, 1
+DP-5 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x23a
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: TMDS
+		supported: TMDS
+	ConnectorType: DisplayPort
+	ConnectorNumber: 3
+	_ConnectorLocation: 3
+	non-desktop: 0
+		supported: 0, 1
+DP-6 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x23b
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: DisplayPort
+		supported: DisplayPort
+	ConnectorType: DisplayPort
+	ConnectorNumber: 2
+	_ConnectorLocation: 2
+	non-desktop: 0
+		supported: 0, 1
+DP-7 disconnected (normal left inverted right x axis y axis)
+	Identifier: 0x23c
+	Timestamp:  8877
+	Subpixel:   unknown
+	Clones:
+	CRTCs:      0 1 2 3
+	Transform:  1.000000 0.000000 0.000000
+	            0.000000 1.000000 0.000000
+	            0.000000 0.000000 1.000000
+	           filter:
+	CscMatrix: 65536 0 0 0 0 65536 0 0 0 0 65536 0
+	BorderDimensions: 4
+		supported: 4
+	Border: 0 0 0 0
+		range: (0, 65535)
+	SignalFormat: TMDS
+		supported: TMDS
+	ConnectorType: DisplayPort
+	ConnectorNumber: 2
+	_ConnectorLocation: 2
+	non-desktop: 0
+		supported: 0, 1

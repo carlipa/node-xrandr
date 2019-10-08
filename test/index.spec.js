@@ -11,20 +11,26 @@ describe('parser', () => {
   const buffer5 = fs.readFileSync(`${__dirname}/fixtures/input5.txt`);
   const buffer6 = fs.readFileSync(`${__dirname}/fixtures/input6.txt`);
   const buffer7 = fs.readFileSync(`${__dirname}/fixtures/input7.txt`);
+  const bufferVerbose1 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose1.txt`);
+  const bufferVerbose2 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose2.txt`);
+  const bufferVerbose3 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose3.txt`);
   const expected1 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output1.json`).toString());
   const expected3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output3.json`).toString());
   const expected4 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output4.json`).toString());
   const expected5 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output5.json`).toString());
   const expected6 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output6.json`).toString());
   const expected7 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output7.json`).toString());
+  const expectedVerbose1 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose1.json`).toString());
+  const expectedVerbose2 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose2.json`).toString());
+  const expectedVerbose3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose3.json`).toString());
 
   it('should throw if no string is passed', () => {
     let value;
     try {
       value = parser(undefined);
     } catch (err) {
-      expect(err).toBeA(Error);
-      expect(value).toNotExist();
+      expect(err instanceof Error).toBe(true);
+      expect(value).toBe(undefined);
     }
   });
 
@@ -33,7 +39,7 @@ describe('parser', () => {
     try {
       value = parser(buffer1);
     } catch (err) {
-      expect(err).toBeA(Error);
+      expect(err instanceof Error).toBe(true);
       expect(value).toNotExist();
     }
   });
@@ -43,7 +49,7 @@ describe('parser', () => {
     try {
       value = parser(buffer1.toString());
     } catch (err) {
-      expect(err).toBeA(Error);
+      expect(err instanceof Error).toBe(true);
       expect(value).toNotExist();
     }
   });
@@ -81,5 +87,20 @@ describe('parser', () => {
   it('should properly parse the file input7.txt', () => {
     const value = parser(buffer7.toString());
     expect(value).toEqual(expected7);
+  });
+
+  it('should properly parse the file inputVerbose1.txt', () => {
+    const value = parser(bufferVerbose1.toString(), {verbosedInput: true});
+    expect(value).toEqual(expectedVerbose1);
+  });
+
+  it('should properly parse the file inputVerbose2.txt', () => {
+    const value = parser(bufferVerbose2.toString(), {verbosedInput: true});
+    expect(value).toEqual(expectedVerbose2);
+  });
+
+  it('should properly parse the file inputVerbose3.txt', () => {
+    const value = parser(bufferVerbose3.toString(), {verbosedInput: true});
+    expect(value).toEqual(expectedVerbose3);
   });
 });
