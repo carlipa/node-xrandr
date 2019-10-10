@@ -1,0 +1,334 @@
+{
+  "DP1": {
+    "connected": true,
+    "modes": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "native": true,
+        "current": true,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 50
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 59.94
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 50
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 59.94
+      },
+      {
+        "width": 1680,
+        "height": 1050,
+        "rate": 59.88
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "rate": 59.9
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "rate": 60
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "rate": 59.79
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "rate": 60
+      },
+      {
+        "width": 1360,
+        "height": 768,
+        "rate": 60.02
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "rate": 59.91
+      },
+      {
+        "width": 1280,
+        "height": 768,
+        "rate": 59.87
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 60
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 50
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 59.94
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "rate": 60
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 60.32
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 56.25
+      },
+      {
+        "width": 720,
+        "height": 576,
+        "rate": 50
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 59.94
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 59.94
+      }
+    ],
+    "rotation": "normal",
+    "width": 1920,
+    "height": 1080,
+    "position": {
+      "x": 3840,
+      "y": 0
+    },
+    "edid": "00ffffffffffff0036794a1c000000001718010380351e78ee33c5a355559c260b505423080031404540614081c0810081409500b300023a801871382d40582c4500132b2100001e201c5686500020300e381300132b2100001e000000fd00323c1e500f0000000000000000000000fc004d3234363750570a2020202020012e02031cf18301000065030c00100049900504130312141f16230907070e1f008051001e3040803700132b2100001c662150b051001b3040703600132b2100001e662156aa51001e30468f3300132b2100001e011d8018711c1620582c2500132b2100009e011d80d0721c1620102c2580132b2100009e0000000000000000003b"
+  },
+  "DP2": {
+    "connected": true,
+    "modes": [
+      {
+        "width": 3840,
+        "height": 2160,
+        "native": true,
+        "current": true,
+        "rate": 30
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "rate": 30
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "rate": 25
+      },
+      {
+        "width": 3840,
+        "height": 2160,
+        "rate": 29.97
+      },
+      {
+        "width": 2560,
+        "height": 1440,
+        "rate": 59.95
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 50
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 59.94
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 50
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "interlaced": true,
+        "rate": 59.94
+      },
+      {
+        "width": 1680,
+        "height": 1050,
+        "rate": 59.88
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "rate": 60
+      },
+      {
+        "width": 1280,
+        "height": 1024,
+        "rate": 75.02
+      },
+      {
+        "width": 1280,
+        "height": 1024,
+        "rate": 60.02
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "rate": 59.91
+      },
+      {
+        "width": 1152,
+        "height": 864,
+        "rate": 75
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 60
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 50
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 59.94
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "rate": 75.03
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "rate": 60
+      },
+      {
+        "width": 832,
+        "height": 624,
+        "rate": 74.55
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 75
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 60.32
+      },
+      {
+        "width": 720,
+        "height": 576,
+        "rate": 50
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 59.94
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 75
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 59.94
+      },
+      {
+        "width": 720,
+        "height": 400,
+        "rate": 70.08
+      }
+    ],
+    "rotation": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "edid": "00ffffffffffff0009d11e8045540000031c0103803c22782e3cd0a7544a9d240e5054a56b80d1c081c081008180a9c0b3000101010104740030f2705a80b0588a00544f2100001a000000ff005a314a3034383137534c300a20000000fd001e4c1e581e000a202020202020000000fc0042656e51204c43440a2020202001bc02032df15310050403020111121314060715161f5f5e696823090707830100006c030c001000383d200040010204740030f2705a80b0588a00544f2100001e565e00a0a0a0295030203500544f2100001c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051"
+  },
+  "HDMI1": {
+    "connected": false,
+    "modes": []
+  },
+  "VIRTUAL1": {
+    "connected": false,
+    "modes": []
+  }
+}

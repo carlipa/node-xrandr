@@ -1,6 +1,7 @@
 const CONNECTED_REGEX = /^(\S+) connected (?:(\d+)x(\d+))?/;
+const POSITION_REGEX = /\s+(\d+)x([0-9i]+)\+(\d+)\+(\d+)\s+/;
 const DISCONNECTED_REGEX = /^(\S+) disconnected/;
-const MODE_REGEX = /^\s+(\d+)x([0-9i]+)\s+((?:\d+\.)?\d+)([* ]?)([+ ]?)/;
+const MODE_REGEX = /^\s+(\d+)x([0-9i]+)\s+((?:\d+\.)?\d+)([*+ ]?)([+* ]?)/;
 const ROTATION_LEFT = /^([^(]+) left \((?:(\d+)x(\d+))?/;
 const ROTATION_RIGHT = /^([^(]+) right \((?:(\d+)x(\d+))?/;
 const ROTATION_INVERTED = /^([^(]+) inverted \((?:(\d+)x(\d+))?/;
@@ -56,6 +57,14 @@ function xrandrParser(input, options = {}) {
         } else if (VERBOSE_ROTATION_INVERTED.test(line)) {
           result[parts[1]].rotation = 'inverted';
         }
+      }
+
+      const position = POSITION_REGEX.exec(line);
+      if (position) {
+        result[parts[1]].position = {
+          x: parseInt(position[3], 10),
+          y: parseInt(position[4], 10)
+        };
       }
 
       lastInterface = parts[1];

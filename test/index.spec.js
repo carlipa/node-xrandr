@@ -5,24 +5,29 @@ import {parser} from '../src/xrandr';
 describe('parser', () => {
   // Fetch fixtures
   const buffer1 = fs.readFileSync(`${__dirname}/fixtures/input1.txt`);
-  const buffer2 = fs.readFileSync(`${__dirname}/fixtures/input1.txt`);
+  const buffer2 = fs.readFileSync(`${__dirname}/fixtures/input2.txt`);
   const buffer3 = fs.readFileSync(`${__dirname}/fixtures/input3.txt`);
   const buffer4 = fs.readFileSync(`${__dirname}/fixtures/input4.txt`);
   const buffer5 = fs.readFileSync(`${__dirname}/fixtures/input5.txt`);
   const buffer6 = fs.readFileSync(`${__dirname}/fixtures/input6.txt`);
   const buffer7 = fs.readFileSync(`${__dirname}/fixtures/input7.txt`);
+  const buffer8 = fs.readFileSync(`${__dirname}/fixtures/input8.txt`);
   const bufferVerbose1 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose1.txt`);
   const bufferVerbose2 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose2.txt`);
   const bufferVerbose3 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose3.txt`);
+  const bufferVerbose4 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose4.txt`);
   const expected1 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output1.json`).toString());
+  const expected2 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output2.json`).toString());
   const expected3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output3.json`).toString());
   const expected4 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output4.json`).toString());
   const expected5 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output5.json`).toString());
   const expected6 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output6.json`).toString());
   const expected7 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output7.json`).toString());
+  const expected8 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output8.json`).toString());
   const expectedVerbose1 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose1.json`).toString());
   const expectedVerbose2 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose2.json`).toString());
   const expectedVerbose3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose3.json`).toString());
+  const expectedVerbose4 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose4.json`).toString());
 
   it('should throw if no string is passed', () => {
     let value;
@@ -61,7 +66,7 @@ describe('parser', () => {
 
   it('should properly parse the file input2.txt', () => {
     const value = parser(buffer2.toString());
-    expect(value).toEqual(expected1);
+    expect(value).toEqual(expected2);
   });
 
   it('should properly parse the file input3.txt', () => {
@@ -89,6 +94,11 @@ describe('parser', () => {
     expect(value).toEqual(expected7);
   });
 
+  it('should properly parse the file input8.txt', () => {
+    const value = parser(buffer8.toString());
+    expect(value).toEqual(expected8);
+  });
+
   it('should properly parse the file inputVerbose1.txt', () => {
     const value = parser(bufferVerbose1.toString(), {verbosedInput: true});
     expect(value).toEqual(expectedVerbose1);
@@ -102,5 +112,10 @@ describe('parser', () => {
   it('should properly parse the file inputVerbose3.txt', () => {
     const value = parser(bufferVerbose3.toString(), {verbosedInput: true});
     expect(value).toEqual(expectedVerbose3);
+  });
+
+  it('should properly parse the file inputVerbose4.txt', () => {
+    const value = parser(bufferVerbose4.toString(), {verbosedInput: true});
+    expect(value).toEqual(expectedVerbose4);
   });
 });

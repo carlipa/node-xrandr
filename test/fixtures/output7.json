@@ -100,7 +100,11 @@
         "rate": 70.08
       }
     ],
-    "rotation": "inverted"
+    "rotation": "inverted",
+    "position": {
+      "x": 0,
+      "y": 0
+    }
   },
   "VIRTUAL1": {
     "connected": false,
