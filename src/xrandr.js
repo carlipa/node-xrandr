@@ -6,8 +6,11 @@ const ROTATION_LEFT = /^([^(]+) left \((?:(\d+)x(\d+))?/;
 const ROTATION_RIGHT = /^([^(]+) right \((?:(\d+)x(\d+))?/;
 const ROTATION_INVERTED = /^([^(]+) inverted \((?:(\d+)x(\d+))?/;
 
-const VERBOSE_MODE_REGEX = /^\s*(\d+)x([0-9i]+)\s+(?:\(0x[0-9a-f]+\)\.)?\s*([0-9.]+MHz)?\s*(\+HSync)?\s*(\+VSync)?\s*(\*current)?\s*(\+preferred)?/;
-const VERBOSE_VERT_MODE_REGEX = /^\s+v:\s+height.+clock\s+([0-9.]+)Hz/;
+// eslint-disable-next-line max-len
+const VERBOSE_MODE_REGEX = /^\s*(\d+)x([0-9i]+)(?:_.+)?\s+(?:\(0x[0-9a-f]+\)\.)?\s*([0-9.]+MHz)?\s*((\+|-)HSync)?\s*((\+|-)VSync)?\s*(\*current)?\s*(\+preferred)?/;
+const VERBOSE_MODE_REGEX_CUSTOM = /^\s*([^\s]+)\s+(?:\(0x[0-9a-f]+\)\.)?\s*([0-9.]+MHz)?\s*((\+|-)HSync)?\s*((\+|-)VSync)?\s*(\*current)?\s*(\+preferred)?/;
+const VERBOSE_HOR_MODE_REGEX = /^\s*h:\s+width\s+([0-9]+).+/;
+const VERBOSE_VERT_MODE_REGEX = /^\s*v:\s+height\s+([0-9]+).+clock\s+([0-9.]+)Hz/;
 const VERBOSE_ANY_LINE_REGEX = /^\s+[^\n]*/;
 const VERBOSE_EDID_START_LINE = /^\s+EDID:/;
 const VERBOSE_EDID_NEXT_LINE = /^\s+([0-f]{32})/;
@@ -86,20 +89,30 @@ function xrandrParser(input, options = {}) {
       if (parts[4] === '+' || parts[5] === '+') mode.native = true;
       if (parts[4] === '*' || parts[5] === '*') mode.current = true;
       result[lastInterface].modes.push(mode);
-    } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_MODE_REGEX.test(line)) {
+    } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_HOR_MODE_REGEX.test(line)) {
+      parts = VERBOSE_HOR_MODE_REGEX.exec(line);
+      mode.width = parseInt(parts[1], 10);
+    } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_VERT_MODE_REGEX.test(line)) {
+      parts = VERBOSE_VERT_MODE_REGEX.exec(line);
+      mode.height = parseInt(parts[1], 10);
+      mode.rate = parseFloat(parts[2]);
+      result[lastInterface].modes.push(mode);
+      mode = null;
+    } else if (parseOptions.verbosedInput
+      && lastInterface
+      && (VERBOSE_MODE_REGEX.test(line) || VERBOSE_MODE_REGEX_CUSTOM.test(line))) {
       parts = VERBOSE_MODE_REGEX.exec(line);
-      mode = {
-        width: parseInt(parts[1], 10),
+      if (!parts) {
+        parts = VERBOSE_MODE_REGEX_CUSTOM.exec(line);
+      }
+
+      mode = {};
+      /*  width: parseInt(parts[1], 10),
         height: parseInt(parts[2], 10)
-      };
+      }; */
       if (/^[0-9]+i$/.test(parts[2])) mode.interlaced = true;
       if (line.includes('+preferred')) mode.native = true;
       if (line.includes('*current')) mode.current = true;
-    } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_VERT_MODE_REGEX.test(line)) {
-      parts = VERBOSE_VERT_MODE_REGEX.exec(line);
-      mode.rate = parseFloat(parts[1]);
-      result[lastInterface].modes.push(mode);
-      mode = null;
     } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_EDID_START_LINE.test(line)) {
       startParseEdid = true;
       result[lastInterface].edid = '';
@@ -107,6 +120,7 @@ function xrandrParser(input, options = {}) {
       parts = VERBOSE_EDID_NEXT_LINE.exec(line);
       result[lastInterface].edid += parts[1];
     } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_ANY_LINE_REGEX.test(line)) {
+
       if (startParseEdid) {
         startParseEdid = false;
       }
