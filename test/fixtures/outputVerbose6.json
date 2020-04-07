@@ -1,0 +1,115 @@
+{
+  "DP1": {
+    "connected": true,
+    "modes": [
+      {
+        "native": true,
+        "current": true,
+        "width": 1200,
+        "height": 1920,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 60
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 50
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 59.94
+      },
+      {
+        "interlaced": true,
+        "width": 1920,
+        "height": 1080,
+        "rate": 60
+      },
+      {
+        "interlaced": true,
+        "width": 1920,
+        "height": 1080,
+        "rate": 50
+      },
+      {
+        "interlaced": true,
+        "width": 1920,
+        "height": 1080,
+        "rate": 59.94
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 60
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 50
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 59.94
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "rate": 60
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 60.32
+      },
+      {
+        "width": 720,
+        "height": 576,
+        "rate": 50
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 59.94
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 59.94
+      }
+    ],
+    "rotation": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "edid": "00ffffffffffff0039f60504120c190010170103811e17b4eac1e5a3574e9c231d505421080001010101010101010101010101010101503eb0a04080237030203600cb281100001e000000ff004e4f5641535441524d33000000000000fc004e4f5641204844204341524400000000fd00307b1cc811000a202020202020012d02033d414d82050404101114131f061503123e0f7f01171f381f0700000010000000000000000000000000000000000000834f000067030c001000b82d011d007200d01e006e28000081490000001ed60980a000e02d00106000008160000808188c0ad090004031000c4000008160000000180000000000000000000000002f"
+  },
+  "DP2": {
+    "connected": false,
+    "modes": []
+  },
+  "HDMI1": {
+    "connected": false,
+    "modes": []
+  },
+  "VIRTUAL1": {
+    "connected": false,
+    "modes": []
+  }
+}

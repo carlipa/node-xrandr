@@ -8,6 +8,7 @@ const ROTATION_INVERTED = /^([^(]+) inverted \((?:(\d+)x(\d+))?/;
 
 // eslint-disable-next-line max-len
 const VERBOSE_MODE_REGEX = /^\s*(\d+)x([0-9i]+)(?:_.+)?\s+(?:\(0x[0-9a-f]+\)\.)?\s*([0-9.]+MHz)?\s*((\+|-)HSync)?\s*((\+|-)VSync)?\s*(\*current)?\s*(\+preferred)?/;
+// eslint-disable-next-line max-len
 const VERBOSE_MODE_REGEX_CUSTOM = /^\s*([^\s]+)\s+(?:\(0x[0-9a-f]+\)\.)?\s*([0-9.]+MHz)?\s*((\+|-)HSync)?\s*((\+|-)VSync)?\s*(\*current)?\s*(\+preferred)?/;
 const VERBOSE_HOR_MODE_REGEX = /^\s*h:\s+width\s+([0-9]+).+/;
 const VERBOSE_VERT_MODE_REGEX = /^\s*v:\s+height\s+([0-9]+).+clock\s+([0-9.]+)Hz/;
@@ -21,7 +22,7 @@ const VERBOSE_ROTATION_INVERTED = /^[^(]+\([^(]+\) inverted \(/;
 
 function xrandrParser(input, options = {}) {
   let strInput = input;
-  const parseOptions = {verbosedInput: false, ...options};
+  const parseOptions = {verbosedInput: false, debug: false, ...options};
   if (Buffer.isBuffer(input)) {
     strInput = input.toString();
   }
@@ -34,6 +35,9 @@ function xrandrParser(input, options = {}) {
   lines.forEach((line) => {
     let parts;
     if (CONNECTED_REGEX.test(line)) {
+      if (parseOptions.debug) {
+        console.log('CONNECTED_REGEX', line);
+      }
       parts = CONNECTED_REGEX.exec(line);
       result[parts[1]] = {
         connected: true,
@@ -72,6 +76,9 @@ function xrandrParser(input, options = {}) {
 
       lastInterface = parts[1];
     } else if (DISCONNECTED_REGEX.test(line)) {
+      if (parseOptions.debug) {
+        console.log('DISCONNECTED_REGEX', line);
+      }
       parts = DISCONNECTED_REGEX.exec(line);
       result[parts[1]] = {
         connected: false,
@@ -79,6 +86,9 @@ function xrandrParser(input, options = {}) {
       };
       lastInterface = parts[1];
     } else if (!parseOptions.verbosedInput && lastInterface && MODE_REGEX.test(line)) {
+      if (parseOptions.debug) {
+        console.log('MODE_REGEX', line);
+      }
       parts = MODE_REGEX.exec(line);
       mode = {
         width: parseInt(parts[1], 10),
@@ -90,9 +100,15 @@ function xrandrParser(input, options = {}) {
       if (parts[4] === '*' || parts[5] === '*') mode.current = true;
       result[lastInterface].modes.push(mode);
     } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_HOR_MODE_REGEX.test(line)) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_HOR_MODE_REGEX', line);
+      }
       parts = VERBOSE_HOR_MODE_REGEX.exec(line);
       mode.width = parseInt(parts[1], 10);
     } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_VERT_MODE_REGEX.test(line)) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_VERT_MODE_REGEX', line);
+      }
       parts = VERBOSE_VERT_MODE_REGEX.exec(line);
       mode.height = parseInt(parts[1], 10);
       mode.rate = parseFloat(parts[2]);
@@ -100,7 +116,11 @@ function xrandrParser(input, options = {}) {
       mode = null;
     } else if (parseOptions.verbosedInput
       && lastInterface
-      && (VERBOSE_MODE_REGEX.test(line) || VERBOSE_MODE_REGEX_CUSTOM.test(line))) {
+      && (VERBOSE_MODE_REGEX.test(line) || VERBOSE_MODE_REGEX_CUSTOM.test(line))
+      && (!VERBOSE_EDID_START_LINE.test(line))) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_MODE_REGEX || VERBOSE_MODE_REGEX_CUSTOM', line);
+      }
       parts = VERBOSE_MODE_REGEX.exec(line);
       if (!parts) {
         parts = VERBOSE_MODE_REGEX_CUSTOM.exec(line);
@@ -114,13 +134,21 @@ function xrandrParser(input, options = {}) {
       if (line.includes('+preferred')) mode.native = true;
       if (line.includes('*current')) mode.current = true;
     } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_EDID_START_LINE.test(line)) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_EDID_START_LINE', line);
+      }
       startParseEdid = true;
       result[lastInterface].edid = '';
     } else if (startParseEdid && parseOptions.verbosedInput && lastInterface && VERBOSE_EDID_NEXT_LINE.test(line)) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_EDID_NEXT_LINE', line);
+      }
       parts = VERBOSE_EDID_NEXT_LINE.exec(line);
       result[lastInterface].edid += parts[1];
     } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_ANY_LINE_REGEX.test(line)) {
-
+      if (parseOptions.debug) {
+        console.log('VERBOSE_ANY_LINE_REGEX', line);
+      }
       if (startParseEdid) {
         startParseEdid = false;
       }

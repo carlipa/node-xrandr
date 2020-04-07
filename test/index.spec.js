@@ -17,6 +17,7 @@ describe('parser', () => {
   const bufferVerbose3 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose3.txt`);
   const bufferVerbose4 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose4.txt`);
   const bufferVerbose5 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose5.txt`);
+  const bufferVerbose6 = fs.readFileSync(`${__dirname}/fixtures/inputVerbose6.txt`);
   const expected1 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output1.json`).toString());
   const expected2 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output2.json`).toString());
   const expected3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/output3.json`).toString());
@@ -30,6 +31,7 @@ describe('parser', () => {
   const expectedVerbose3 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose3.json`).toString());
   const expectedVerbose4 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose4.json`).toString());
   const expectedVerbose5 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose5.json`).toString());
+  const expectedVerbose6 = JSON.parse(fs.readFileSync(`${__dirname}/fixtures/outputVerbose6.json`).toString());
 
   it('should throw if no string is passed', () => {
     let value;
@@ -124,5 +126,10 @@ describe('parser', () => {
   it('should properly parse the file inputVerbose5.txt', () => {
     const value = parser(bufferVerbose5.toString(), {verbosedInput: true});
     expect(value).toEqual(expectedVerbose5);
+  });
+
+  it('should properly parse the file inputVerbose6.txt', () => {
+    const value = parser(bufferVerbose6.toString(), {verbosedInput: true});
+    expect(value).toEqual(expectedVerbose6);
   });
 });
