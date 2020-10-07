@@ -8,6 +8,7 @@
     "modes": []
   },
   "DP-2": {
+    "brightness": 1.0,
     "connected": true,
     "modes": [
       {
