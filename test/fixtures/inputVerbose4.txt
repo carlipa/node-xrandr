@@ -4,7 +4,7 @@ DP1 connected 1920x1080+3840+0 (0x48) normal (normal left inverted right x axis 
 	Timestamp:  400822
 	Subpixel:   unknown
 	Gamma:      1.0:1.0:1.0
-	Brightness: 1.0
+	Brightness: .5
 	Clones:
 	CRTC:       1
 	CRTCs:      0 1 2

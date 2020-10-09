@@ -18,6 +18,7 @@ const VERBOSE_EDID_NEXT_LINE = /^\s+([0-f]{32})/;
 const VERBOSE_ROTATION_LEFT = /^[^(]+\([^(]+\) left \(/;
 const VERBOSE_ROTATION_RIGHT = /^[^(]+\([^(]+\) right \(/;
 const VERBOSE_ROTATION_INVERTED = /^[^(]+\([^(]+\) inverted \(/;
+const VERBOSE_BRIGHTNESS = /^\s+Brightness: ([0-9.]+)/;
 
 
 function xrandrParser(input, options = {}) {
@@ -99,6 +100,12 @@ function xrandrParser(input, options = {}) {
       if (parts[4] === '+' || parts[5] === '+') mode.native = true;
       if (parts[4] === '*' || parts[5] === '*') mode.current = true;
       result[lastInterface].modes.push(mode);
+    } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_BRIGHTNESS.test(line)) {
+      if (parseOptions.debug) {
+        console.log('VERBOSE_BRIGHTNESS', line);
+      }
+      parts = VERBOSE_BRIGHTNESS.exec(line);
+      result[lastInterface].brightness = parseFloat(parts[1]);
     } else if (parseOptions.verbosedInput && lastInterface && mode && VERBOSE_HOR_MODE_REGEX.test(line)) {
       if (parseOptions.debug) {
         console.log('VERBOSE_HOR_MODE_REGEX', line);

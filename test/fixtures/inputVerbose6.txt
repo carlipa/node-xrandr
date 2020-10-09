@@ -4,15 +4,15 @@ DP1 connected primary 1200x1920+0+0 (0x136) normal (normal left inverted right x
 	Timestamp:  82845
 	Subpixel:   unknown
 	Gamma:      1.0:1.0:1.0
-	Brightness: 1.0
-	Clones:    
+	Brightness: 0.6
+	Clones:
 	CRTC:       0
 	CRTCs:      0 1 2
 	Transform:  1.000000 0.000000 0.000000
 	            0.000000 1.000000 0.000000
 	            0.000000 0.000000 1.000000
-	           filter: 
-	EDID: 
+	           filter:
+	EDID:
 		00ffffffffffff0039f60504120c1900
 		10170103811e17b4eac1e5a3574e9c23
 		1d505421080001010101010101010101
@@ -29,18 +29,18 @@ DP1 connected primary 1200x1920+0+0 (0x136) normal (normal left inverted right x
 		0980a000e02d00106000008160000808
 		188c0ad090004031000c400000816000
 		0000180000000000000000000000002f
-	_MUTTER_PRESENTATION_OUTPUT: 0 
-	Content Protection: Undesired 
+	_MUTTER_PRESENTATION_OUTPUT: 0
+	Content Protection: Undesired
 		supported: Undesired, Desired, Enabled
-	max bpc: 12 
+	max bpc: 12
 		range: (6, 12)
-	Broadcast RGB: Automatic 
+	Broadcast RGB: Automatic
 		supported: Automatic, Full, Limited 16:235
-	audio: auto 
+	audio: auto
 		supported: force-dvi, off, auto, on
-	link-status: Good 
+	link-status: Good
 		supported: Good, Bad
-	non-desktop: 0 
+	non-desktop: 0
 		range: (0, 1)
   1200x1920 (0x136) 159.520MHz +HSync +VSync *current +preferred
         h: width  1200 start 1248 end 1280 total 1360 skew    0 clock 117.29KHz
@@ -102,18 +102,18 @@ DP2 disconnected (normal left inverted right x axis y axis)
 	Transform:  1.000000 0.000000 0.000000
 	            0.000000 1.000000 0.000000
 	            0.000000 0.000000 1.000000
-	           filter: 
-	Content Protection: Undesired 
+	           filter:
+	Content Protection: Undesired
 		supported: Undesired, Desired, Enabled
-	max bpc: 12 
+	max bpc: 12
 		range: (6, 12)
-	Broadcast RGB: Automatic 
+	Broadcast RGB: Automatic
 		supported: Automatic, Full, Limited 16:235
-	audio: auto 
+	audio: auto
 		supported: force-dvi, off, auto, on
-	link-status: Good 
+	link-status: Good
 		supported: Good, Bad
-	non-desktop: 0 
+	non-desktop: 0
 		range: (0, 1)
 HDMI1 disconnected (normal left inverted right x axis y axis)
 	Identifier: 0x45
@@ -124,32 +124,32 @@ HDMI1 disconnected (normal left inverted right x axis y axis)
 	Transform:  1.000000 0.000000 0.000000
 	            0.000000 1.000000 0.000000
 	            0.000000 0.000000 1.000000
-	           filter: 
-	Content Protection: Undesired 
+	           filter:
+	Content Protection: Undesired
 		supported: Undesired, Desired, Enabled
-	max bpc: 12 
+	max bpc: 12
 		range: (8, 12)
-	content type: No Data 
+	content type: No Data
 		supported: No Data, Graphics, Photo, Cinema, Game
-	aspect ratio: Automatic 
+	aspect ratio: Automatic
 		supported: Automatic, 4:3, 16:9
-	Broadcast RGB: Automatic 
+	Broadcast RGB: Automatic
 		supported: Automatic, Full, Limited 16:235
-	audio: auto 
+	audio: auto
 		supported: force-dvi, off, auto, on
-	link-status: Good 
+	link-status: Good
 		supported: Good, Bad
-	non-desktop: 0 
+	non-desktop: 0
 		range: (0, 1)
 VIRTUAL1 disconnected (normal left inverted right x axis y axis)
 	Identifier: 0x46
 	Timestamp:  82845
 	Subpixel:   no subpixels
-	Clones:    
+	Clones:
 	CRTCs:      3
 	Transform:  1.000000 0.000000 0.000000
 	            0.000000 1.000000 0.000000
 	            0.000000 0.000000 1.000000
-	           filter: 
-	non-desktop: 0 
+	           filter:
+	non-desktop: 0
 		supported: 0, 1
