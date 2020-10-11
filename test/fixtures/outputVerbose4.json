@@ -2,6 +2,8 @@
   "DP1": {
     "brightness": 0.5,
     "connected": true,
+    "width": 1920,
+    "height": 1080,
     "modes": [
       {
         "width": 1920,
@@ -146,6 +148,8 @@
   "DP2": {
     "brightness": 1.0,
     "connected": true,
+    "width": 3840,
+    "height": 2160,
     "modes": [
       {
         "width": 3840,

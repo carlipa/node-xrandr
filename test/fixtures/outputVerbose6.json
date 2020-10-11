@@ -2,6 +2,8 @@
   "DP1": {
     "brightness": 0.6,
     "connected": true,
+    "width": 1200,
+    "height": 1920,
     "modes": [
       {
         "native": true,

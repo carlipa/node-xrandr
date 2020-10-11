@@ -1,4 +1,4 @@
-const CONNECTED_REGEX = /^(\S+) connected (?:(\d+)x(\d+))?/;
+const CONNECTED_REGEX = /^(\S+) connected (primary )?(?:(\d+)x(\d+))?/;
 const POSITION_REGEX = /\s+(\d+)x([0-9i]+)\+(\d+)\+(\d+)\s+/;
 const DISCONNECTED_REGEX = /^(\S+) disconnected/;
 const MODE_REGEX = /^\s+(\d+)x([0-9i]+)\s+((?:\d+\.)?\d+)([*+ ]?)([+* ]?)/;
@@ -45,9 +45,10 @@ function xrandrParser(input, options = {}) {
         modes: [],
         rotation: 'normal'
       };
-      if (parts[2] && parts[3]) {
-        result[parts[1]].width = parseInt(parts[2], 10);
-        result[parts[1]].height = parseInt(parts[3], 10);
+
+      if (parts[3] && parts[4]) {
+        result[parts[1]].width = parseInt(parts[3], 10);
+        result[parts[1]].height = parseInt(parts[4], 10);
       }
       if (!parseOptions.verbosedInput) {
         if (ROTATION_LEFT.test(line)) {

@@ -10,6 +10,8 @@
   "DP-2": {
     "brightness": 1.0,
     "connected": true,
+    "width": 3840,
+    "height": 2160,
     "modes": [
       {
         "width": 3840,
