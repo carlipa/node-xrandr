@@ -1,6 +1,6 @@
-Screen 0: minimum 8 x 8, current 1080 x 1920, maximum 32767 x 32767
+Screen 0: minimum 8 x 8, current 1920 x 1080, maximum 32767 x 32767
 DP1 disconnected (normal left inverted right x axis y axis)
-HDMI1 connected primary 1080x1920+0+0 left (normal left inverted right x axis y axis) 885mm x 498mm
+HDMI1 connected primary 1920x1080+0+0 left (normal left inverted right x axis y axis) 885mm x 498mm
    1920x1080     60.00*+  50.00    59.94    30.00    24.00    29.97    23.98
    1920x1080i    60.00    50.00    59.94
    1600x1200     60.00

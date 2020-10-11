@@ -2,6 +2,8 @@
   "DP1": {
     "brightness": 1.0,
     "connected": true,
+    "width": 1920,
+    "height": 1080,
     "modes": [
       {
         "width": 1920,

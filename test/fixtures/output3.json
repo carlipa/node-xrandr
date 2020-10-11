@@ -4,6 +4,8 @@
     "modes": []
   },
   "HDMI1": {
+    "height": 800,
+    "width": 1280,
     "connected": true,
     "modes": [
       {

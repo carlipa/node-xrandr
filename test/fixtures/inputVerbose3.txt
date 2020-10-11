@@ -1,5 +1,5 @@
 Screen 0: minimum 8 x 8, current 1080 x 1920, maximum 32767 x 32767
-DP1 connected primary 1080x1920+0+0 (0x48) left (normal left inverted right x axis y axis) 530mm x 300mm
+DP1 connected primary 1920x1080+0+0 (0x48) left (normal left inverted right x axis y axis) 530mm x 300mm
 	Identifier: 0x43
 	Timestamp:  503641
 	Subpixel:   unknown
