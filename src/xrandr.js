@@ -31,7 +31,7 @@ function xrandrParser(input, options = {}) {
     strInput = input.toString();
   }
 
-  const lines = strInput.split("\n");
+  const lines = strInput.split('\n');
 
   const result = {};
   let mode = {};
@@ -42,7 +42,7 @@ function xrandrParser(input, options = {}) {
     let parts;
     if (CONNECTED_REGEX.test(line)) {
       if (parseOptions.debug) {
-        console.log("CONNECTED_REGEX", line);
+        console.log('CONNECTED_REGEX', line);
       }
 
       parts = CONNECTED_REGEX.exec(line);
@@ -50,7 +50,7 @@ function xrandrParser(input, options = {}) {
       result[parts[1]] = {
         connected: true,
         modes: [],
-        rotation: "normal",
+        rotation: 'normal',
       };
       if (parts[2] && parts[3]) {
         result[parts[1]].width = parseInt(parts[2], 10);
@@ -58,19 +58,19 @@ function xrandrParser(input, options = {}) {
       }
       if (!parseOptions.verbosedInput) {
         if (ROTATION_LEFT.test(line)) {
-          result[parts[1]].rotation = "left";
+          result[parts[1]].rotation = 'left';
         } else if (ROTATION_RIGHT.test(line)) {
-          result[parts[1]].rotation = "right";
+          result[parts[1]].rotation = 'right';
         } else if (ROTATION_INVERTED.test(line)) {
-          result[parts[1]].rotation = "inverted";
+          result[parts[1]].rotation = 'inverted';
         }
       } else {
         if (VERBOSE_ROTATION_LEFT.test(line)) {
-          result[parts[1]].rotation = "left";
+          result[parts[1]].rotation = 'left';
         } else if (VERBOSE_ROTATION_RIGHT.test(line)) {
-          result[parts[1]].rotation = "right";
+          result[parts[1]].rotation = 'right';
         } else if (VERBOSE_ROTATION_INVERTED.test(line)) {
-          result[parts[1]].rotation = "inverted";
+          result[parts[1]].rotation = 'inverted';
         }
       }
 
@@ -85,7 +85,7 @@ function xrandrParser(input, options = {}) {
       lastInterface = parts[1];
     } else if (DISCONNECTED_REGEX.test(line)) {
       if (parseOptions.debug) {
-        console.log("DISCONNECTED_REGEX", line);
+        console.log('DISCONNECTED_REGEX', line);
       }
       parts = DISCONNECTED_REGEX.exec(line);
       result[parts[1]] = {
@@ -99,7 +99,7 @@ function xrandrParser(input, options = {}) {
       MODE_REGEX.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("MODE_REGEX", line);
+        console.log('MODE_REGEX', line);
       }
 
       parts = MODE_REGEX.exec(line);
@@ -111,9 +111,9 @@ function xrandrParser(input, options = {}) {
       frameRates = MODE_CURRENT_FRAME_RATE_REGEX.exec(line);
       // Consider the element in the 0th position and splitting it based
       // on the empty space and then removing the empty space using filter method
-      frameRates = frameRates[1].split(" ").filter((e) => e);
+      frameRates = frameRates[1].split(' ').filter((e) => e);
       // Check if the asterisk exists in the line(string)
-      let checkAsteriskPresence = line.includes("*");
+      let checkAsteriskPresence = line.includes('*');
 
       if (checkAsteriskPresence) {
         // If asterisk exists taking the last frame rate from the array
@@ -130,7 +130,7 @@ function xrandrParser(input, options = {}) {
       };
 
       if (/^[0-9]+i$/.test(parts[2])) mode.interlaced = true;
-      if (parts[4] === "+" || parts[5] === "+") mode.native = true;
+      if (parts[4] === '+' || parts[5] === '+') mode.native = true;
       // If asterisk exists then adding the current key to the mode
       if (checkAsteriskPresence) mode.current = true;
       result[lastInterface].modes.push(mode);
@@ -140,7 +140,7 @@ function xrandrParser(input, options = {}) {
       VERBOSE_BRIGHTNESS.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_BRIGHTNESS", line);
+        console.log('VERBOSE_BRIGHTNESS', line);
       }
       parts = VERBOSE_BRIGHTNESS.exec(line);
       result[lastInterface].brightness = parseFloat(parts[1]);
@@ -151,7 +151,7 @@ function xrandrParser(input, options = {}) {
       VERBOSE_HOR_MODE_REGEX.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_HOR_MODE_REGEX", line);
+        console.log('VERBOSE_HOR_MODE_REGEX', line);
       }
       parts = VERBOSE_HOR_MODE_REGEX.exec(line);
       mode.width = parseInt(parts[1], 10);
@@ -162,7 +162,7 @@ function xrandrParser(input, options = {}) {
       VERBOSE_VERT_MODE_REGEX.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_VERT_MODE_REGEX", line);
+        console.log('VERBOSE_VERT_MODE_REGEX', line);
       }
       parts = VERBOSE_VERT_MODE_REGEX.exec(line);
       mode.height = parseInt(parts[1], 10);
@@ -176,7 +176,7 @@ function xrandrParser(input, options = {}) {
       !VERBOSE_EDID_START_LINE.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_MODE_REGEX || VERBOSE_MODE_REGEX_CUSTOM", line);
+        console.log('VERBOSE_MODE_REGEX || VERBOSE_MODE_REGEX_CUSTOM', line);
       }
       parts = VERBOSE_MODE_REGEX.exec(line);
       if (!parts) {
@@ -188,18 +188,18 @@ function xrandrParser(input, options = {}) {
         height: parseInt(parts[2], 10)
       }; */
       if (/^[0-9]+i$/.test(parts[2])) mode.interlaced = true;
-      if (line.includes("+preferred")) mode.native = true;
-      if (line.includes("*current")) mode.current = true;
+      if (line.includes('+preferred')) mode.native = true;
+      if (line.includes('*current')) mode.current = true;
     } else if (
       parseOptions.verbosedInput &&
       lastInterface &&
       VERBOSE_EDID_START_LINE.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_EDID_START_LINE", line);
+        console.log('VERBOSE_EDID_START_LINE', line);
       }
       startParseEdid = true;
-      result[lastInterface].edid = "";
+      result[lastInterface].edid = '';
     } else if (
       startParseEdid &&
       parseOptions.verbosedInput &&
@@ -207,7 +207,7 @@ function xrandrParser(input, options = {}) {
       VERBOSE_EDID_NEXT_LINE.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_EDID_NEXT_LINE", line);
+        console.log('VERBOSE_EDID_NEXT_LINE', line);
       }
       parts = VERBOSE_EDID_NEXT_LINE.exec(line);
       result[lastInterface].edid += parts[1];
@@ -217,7 +217,7 @@ function xrandrParser(input, options = {}) {
       VERBOSE_ANY_LINE_REGEX.test(line)
     ) {
       if (parseOptions.debug) {
-        console.log("VERBOSE_ANY_LINE_REGEX", line);
+        console.log('VERBOSE_ANY_LINE_REGEX', line);
       }
       if (startParseEdid) {
         startParseEdid = false;
