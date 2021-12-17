@@ -2,6 +2,7 @@ const CONNECTED_REGEX = /^(\S+) connected (?:(\d+)x(\d+))?/;
 const POSITION_REGEX = /\s+(\d+)x([0-9i]+)\+(\d+)\+(\d+)\s+/;
 const DISCONNECTED_REGEX = /^(\S+) disconnected/;
 const MODE_REGEX = /^\s+(\d+)x([0-9i]+)\s+((?:\d+\.)?\d+)([*+ ]?)([+* ]?)/;
+const MODE_CURRENT_FRAME_RATE_REGEX = /^([^*]+)/;
 const ROTATION_LEFT = /^([^(]+) left \((?:(\d+)x(\d+))?/;
 const ROTATION_RIGHT = /^([^(]+) right \((?:(\d+)x(\d+))?/;
 const ROTATION_INVERTED = /^([^(]+) inverted \((?:(\d+)x(\d+))?/;
@@ -91,14 +92,28 @@ function xrandrParser(input, options = {}) {
         console.log('MODE_REGEX', line);
       }
       parts = MODE_REGEX.exec(line);
+
+      let frameRates;
+      // Regex pattern to match string until asterisk
+      frameRates = MODE_CURRENT_FRAME_RATE_REGEX.exec(line);
+      // Consider the element in the 0th position and splitting it based
+      // on the empty space and then removing the empty space using filter method
+      frameRates = frameRates[1].split(' ').filter((e) => e);
+      // Check if the asterisk exists in the line(string)
+      let checkAsteriskPresence = line.includes('*');
+
+      // If asterisk exists taking the last frame rate from the array
+      // If asterisk does not exist, considering the default first frame rate from the array
+      const frameRate = checkAsteriskPresence ? frameRates.slice(-1)[0] : frameRates[1];
+
       mode = {
         width: parseInt(parts[1], 10),
         height: parseInt(parts[2], 10),
-        rate: parseFloat(parts[3])
+        rate: parseFloat(frameRate)
       };
       if (/^[0-9]+i$/.test(parts[2])) mode.interlaced = true;
       if (parts[4] === '+' || parts[5] === '+') mode.native = true;
-      if (parts[4] === '*' || parts[5] === '*') mode.current = true;
+      if (checkAsteriskPresence) mode.current = true;
       result[lastInterface].modes.push(mode);
     } else if (parseOptions.verbosedInput && lastInterface && VERBOSE_BRIGHTNESS.test(line)) {
       if (parseOptions.debug) {

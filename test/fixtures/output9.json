@@ -1,0 +1,108 @@
+{
+  "DP1": {
+    "connected": false,
+    "modes": []
+  },
+  "HDMI1": {
+    "connected": true,
+    "modes": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 60,
+        "native": true
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "rate": 60,
+        "interlaced": true
+      },
+      {
+        "width": 1680,
+        "height": 1050,
+        "rate": 59.88
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "rate": 59.9
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "rate": 60
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "rate": 59.79
+      },
+      {
+        "width": 1360,
+        "height": 768,
+        "rate": 60.02
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "rate": 59.91
+      },
+      {
+        "width": 1280,
+        "height": 768,
+        "rate": 59.87
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "rate": 50,
+        "current": true
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "rate": 60
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "rate": 60.32
+      },
+      {
+        "width": 720,
+        "height": 576,
+        "rate": 50
+      },
+      {
+        "width": 720,
+        "height": 576,
+        "rate": 50,
+        "interlaced": true
+      },
+      {
+        "width": 720,
+        "height": 480,
+        "rate": 60
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "rate": 60
+      }
+    ],
+    "rotation": "normal",
+    "position": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "HDMI2": {
+    "connected": false,
+    "modes": []
+  },
+  "VIRTUAL1": {
+    "connected": false,
+    "modes": []
+  }
+}
