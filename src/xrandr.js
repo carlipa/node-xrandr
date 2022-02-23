@@ -219,6 +219,4 @@ function xrandrParser(input, options = {}) {
   return result;
 }
 
-//export { xrandrParser as parser, xrandrParser as default };
-
-module.exports = xrandrParser;
+export { xrandrParser as parser, xrandrParser as default };
