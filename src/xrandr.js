@@ -1,8 +1,7 @@
 const CONNECTED_REGEX = /^(\S+) connected (?:(\d+)x(\d+))?/;
 const POSITION_REGEX = /\s+(\d+)x([0-9i]+)\+(\d+)\+(\d+)\s+/;
 const DISCONNECTED_REGEX = /^(\S+) disconnected/;
-const MODE_REGEX =
-  /^\s+(\d+)x([0-9i_((?:\d+\.)?\d+)]+)\s+((?:\d+\.)?\d+)([*+ ]?)([+* ]?)/;
+const MODE_REGEX = /^\s+(\d+)x([0-9i_.]+)\s+((?:\d+\.)?\d+)([*+ ]?)([+* ]?)/;
 const MODE_CURRENT_FRAME_RATE_REGEX = /^([^*]+)/;
 const ROTATION_LEFT = /^([^(]+) left \((?:(\d+)x(\d+))?/;
 const ROTATION_RIGHT = /^([^(]+) right \((?:(\d+)x(\d+))?/;
