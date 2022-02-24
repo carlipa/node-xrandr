@@ -20,7 +20,6 @@ const VERBOSE_ROTATION_LEFT = /^[^(]+\([^(]+\) left \(/;
 const VERBOSE_ROTATION_RIGHT = /^[^(]+\([^(]+\) right \(/;
 const VERBOSE_ROTATION_INVERTED = /^[^(]+\([^(]+\) inverted \(/;
 const VERBOSE_BRIGHTNESS = /^\s+Brightness: ([0-9.]+)/;
-
 function xrandrParser(input, options = {}) {
   let strInput = input;
   const parseOptions = {verbosedInput: false, debug: false, ...options};
@@ -135,8 +134,7 @@ function xrandrParser(input, options = {}) {
       mode.rate = parseFloat(parts[2]);
       result[lastInterface].modes.push(mode);
       mode = null;
-    } else if (
-      parseOptions.verbosedInput 
+    } else if (parseOptions.verbosedInput 
       && lastInterface 
       && (VERBOSE_MODE_REGEX.test(line) || VERBOSE_MODE_REGEX_CUSTOM.test(line)) 
       && (!VERBOSE_EDID_START_LINE.test(line))) {
@@ -181,7 +179,7 @@ function xrandrParser(input, options = {}) {
   return result;
 }
 
-export { 
+export {
   xrandrParser as parser,
-  xrandrParser as default 
+  xrandrParser as default
 };
