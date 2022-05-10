@@ -5,6 +5,8 @@
   },
   "HDMI1": {
     "connected": true,
+    "height": 1080,
+    "width": 1920,
     "modes": [
       {
         "current": true,

@@ -1,4 +1,4 @@
-Screen 0: minimum 8 x 8, current 5760 x 2160, maximum 32767 x 32767
+Screen 0: minimum 8 x 8, current 1920 x 1080, maximum 32767 x 32767
 DP1 connected 1920x1080+3840+0 (normal left inverted right x axis y axis) 530mm x 300mm
    1920x1080     60.00*+  50.00    59.94
    1920x1080i    60.00    50.00    59.94
